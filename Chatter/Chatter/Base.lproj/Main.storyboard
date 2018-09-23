@@ -18,13 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChattTableCell" rowHeight="200" id="ncs-YF-8hc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChattTableCell" rowHeight="200" id="ncs-YF-8hc" customClass="ChattTableCell" customModule="Chatter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ncs-YF-8hc" id="e6T-Vx-QBu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPh-9B-UcU">
+                                            <rect key="frame" x="317" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-hD-ifw">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwO-4h-dRK">
+                                            <rect key="frame" x="16" y="40" width="343" height="151.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="dwO-4h-dRK" secondAttribute="bottom" constant="8" id="1VE-0b-54c"/>
+                                        <constraint firstItem="vPh-9B-UcU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7lg-hD-ifw" secondAttribute="trailing" constant="8" symbolic="YES" id="BWR-1Z-UO9"/>
+                                        <constraint firstItem="7lg-hD-ifw" firstAttribute="top" secondItem="e6T-Vx-QBu" secondAttribute="topMargin" id="NsW-N6-su4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dwO-4h-dRK" secondAttribute="trailing" id="X06-iB-epd"/>
+                                        <constraint firstItem="vPh-9B-UcU" firstAttribute="trailing" secondItem="e6T-Vx-QBu" secondAttribute="trailingMargin" id="Y7E-nN-CAu"/>
+                                        <constraint firstItem="dwO-4h-dRK" firstAttribute="top" secondItem="vPh-9B-UcU" secondAttribute="bottom" constant="8" id="a7h-qt-pFn"/>
+                                        <constraint firstItem="vPh-9B-UcU" firstAttribute="baseline" secondItem="7lg-hD-ifw" secondAttribute="baseline" id="i4Q-EC-W6R"/>
+                                        <constraint firstItem="dwO-4h-dRK" firstAttribute="leading" secondItem="e6T-Vx-QBu" secondAttribute="leadingMargin" id="kIe-ws-dFg"/>
+                                        <constraint firstItem="7lg-hD-ifw" firstAttribute="leading" secondItem="e6T-Vx-QBu" secondAttribute="leadingMargin" id="kZ9-2d-Qee"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="dwO-4h-dRK" id="Pzb-Tv-GSV"/>
+                                    <outlet property="timeStampLabel" destination="vPh-9B-UcU" id="CQM-5o-OvK"/>
+                                    <outlet property="usernameLabel" destination="7lg-hD-ifw" id="ddK-qs-rol"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1232.8" y="-18.440779610194905"/>
         </scene>
-        <!--Compose-->
+        <!--Post-->
         <scene sceneID="Ibn-ND-FTh">
             <objects>
                 <viewController id="qWu-wa-6h0" sceneMemberID="viewController">
@@ -56,25 +92,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKU-Tl-0Rb">
-                                <rect key="frame" x="155" y="72" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Type message here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6mJ-oC-71F">
-                                <rect key="frame" x="16" y="101" width="240" height="128"/>
+                                <rect key="frame" x="16" y="164" width="343" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKU-Tl-0Rb">
+                                <rect key="frame" x="155" y="115" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="messageTextView" destination="6mJ-oC-71F" id="E2H-5C-2qb"/>
+                            <outlet property="usernameLabel" destination="zKU-Tl-0Rb" id="Me8-1q-pAd"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Compose" id="5kD-3W-2g4">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc"/>
+                    <navigationItem key="navigationItem" title="Post" id="5kD-3W-2g4">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc">
+                            <connections>
+                                <action selector="submitClicked:" destination="aFY-C8-6df" id="ufs-az-tMn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47k-m5-F0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
