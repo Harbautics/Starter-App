@@ -109,9 +109,6 @@ class ComposeViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!
-    @IBAction func submitButton(_ sender: Any) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +119,8 @@ class ComposeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func submitClicked(_ sender: Any) {
+    
+    @IBAction func submitClicked(_ sender: UIBarButtonItem) {
         
         let json: [String: Any] = ["username": self.usernameLabel.text ?? "NULL", "message": self.messageTextView.text ??
             "I wrote a blank message, oops!"]

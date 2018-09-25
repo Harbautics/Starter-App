@@ -12,8 +12,8 @@
         <!--Chatter-->
         <scene sceneID="rNB-3M-Vlv">
             <objects>
-                <tableViewController id="gc9-sL-QqX" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cl6-Ro-AjI" customClass="ChattTableViewController" customModule="Chatter" customModuleProvider="target">
+                <tableViewController id="gc9-sL-QqX" customClass="ChattTableViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cl6-Ro-AjI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +72,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="NYu-BK-xkk">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
@@ -82,12 +83,12 @@
         <!--Post-->
         <scene sceneID="Ibn-ND-FTh">
             <objects>
-                <viewController id="qWu-wa-6h0" sceneMemberID="viewController">
+                <viewController id="qWu-wa-6h0" customClass="ComposeViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ICm-22-vnT"/>
                         <viewControllerLayoutGuide type="bottom" id="Df3-x5-sC1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aFY-C8-6df" customClass="ComposeViewController">
+                    <view key="view" contentMode="scaleToFill" id="aFY-C8-6df">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -113,21 +114,12 @@
                             <constraint firstItem="zKU-Tl-0Rb" firstAttribute="centerX" secondItem="aFY-C8-6df" secondAttribute="centerX" id="mL7-hu-ajS"/>
                             <constraint firstItem="6mJ-oC-71F" firstAttribute="leading" secondItem="aFY-C8-6df" secondAttribute="leadingMargin" id="nod-rz-xYt"/>
                         </constraints>
-                        <connections>
-                            <outlet property="messageTextView" destination="6mJ-oC-71F" id="E2H-5C-2qb"/>
-                            <outlet property="usernameLabel" destination="zKU-Tl-0Rb" id="Me8-1q-pAd"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="5kD-3W-2g4">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc">
-                            <connections>
-                                <action selector="submitButton:" destination="mSr-Wp-k4V" id="E3t-qB-01e"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47k-m5-F0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="mSr-Wp-k4V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3056.8000000000002" y="17.541229385307346"/>
         </scene>
