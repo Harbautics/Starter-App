@@ -116,8 +116,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="5kD-3W-2g4">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zmv-Mz-fyc">
+                            <connections>
+                                <action selector="submitClicked:" destination="qWu-wa-6h0" id="Pb0-MA-XK0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageTextView" destination="6mJ-oC-71F" id="pPz-To-ctG"/>
+                        <outlet property="usernameLabel" destination="zKU-Tl-0Rb" id="svD-1g-ghZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47k-m5-F0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
