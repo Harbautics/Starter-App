@@ -27,7 +27,7 @@ class ChattTableViewController: UITableViewController {
     
     var chatts = [Chatt]()
     func refreshChatts() {
-        let requestURL = "http://159.203.172.151/getchatts/"
+        let requestURL = "http://209.97.157.11/getchatts/"
         var request = URLRequest(url: URL(string: requestURL)!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -128,7 +128,7 @@ class ComposeViewController: UIViewController {
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         var request = URLRequest(url:
-            URL(string: "http://159.203.172.151/addchatt/")!)
+            URL(string: "http://209.97.157.11/addchatt/")!)
         request.httpMethod = "POST"
         request.httpBody = jsonData
         
